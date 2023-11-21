@@ -8,12 +8,12 @@ exports.up = function (knex) {
     table.string("desc").notNullable();
     table.dateTime("estimateAt");
     table.dateTime("doneAt");
-    table.integer("userId").references("id").inTable("users").notNullable();
     table
       .integer("categoryId")
       .references("id")
       .inTable("categories")
-      .notNullable();
+      .notNullable()
+      .onDelete("CASCADE"); // Adiciona a restrição ON DELETE CASCADE
   });
 };
 

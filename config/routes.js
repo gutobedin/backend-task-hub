@@ -5,7 +5,6 @@ module.exports = (app) => {
   app
     .route("/tasks")
     .all(app.config.passport.authenticate())
-    .get(app.api.task.getTasks)
     .post(app.api.task.save);
 
   app
@@ -28,4 +27,9 @@ module.exports = (app) => {
     .route("/categories/:id")
     .all(app.config.passport.authenticate())
     .delete(app.api.categories.remove);
+
+  app
+    .route("/categories/:categoryId/tasks/:estimateAt")
+    .all(app.config.passport.authenticate())
+    .get(app.api.task.getTasks);
 };
