@@ -1,5 +1,3 @@
-const moment = require("moment");
-
 module.exports = (app) => {
   const getCategories = (req, res) => {
     app

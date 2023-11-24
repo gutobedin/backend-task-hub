@@ -13,7 +13,7 @@ exports.up = function (knex) {
       .references("id")
       .inTable("categories")
       .notNullable()
-      .onDelete("CASCADE"); // Adiciona a restrição ON DELETE CASCADE
+      .onDelete("CASCADE");
   });
 };
 
